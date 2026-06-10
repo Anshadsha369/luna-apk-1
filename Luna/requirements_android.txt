@@ -1,0 +1,11 @@
+kivy
+requests
+pyjnius
+plyer
+android
+pyttsx3
+speechrecognition
+pillow
+psutil
+pyautogui
+paho-mqtt

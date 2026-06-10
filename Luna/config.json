@@ -1,0 +1,33 @@
+{
+    "name": "Luna",
+    "version": "2.0.0",
+    "creator": "Tony Stark",
+    "ollama_model": "mistral",
+    "ollama_host": "http://192.168.1.100:11434",
+    "voice": {
+        "engine": "sapi5",
+        "rate": 175,
+        "pitch": 1.05,
+        "gender": "female",
+        "style": "siri"
+    },
+    "wake_word": "luna",
+    "theme": "dark",
+    "modules": {
+        "phone_control": true,
+        "system_control": true,
+        "camera_vision": true,
+        "smart_home": true,
+        "internet_agent": true,
+        "automation": true,
+        "finance": true,
+        "health": true,
+        "creative": true,
+        "screen_vision": true,
+        "personal_intelligence": true
+    },
+    "smart_home": {
+        "mqtt_broker": "localhost",
+        "mqtt_port": 1883
+    }
+}

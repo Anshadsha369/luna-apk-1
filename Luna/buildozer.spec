@@ -1,0 +1,25 @@
+[app]
+title = L U N A
+package.name = luna
+package.domain = ai.luna
+source.dir = .
+requirements = python3,kivy,requests,plyer,pyjnius,android,pyttsx3,psutil,pyautogui,paho-mqtt
+orientation = portrait
+icon.filename = data/icon.png
+presplash.filename = data/presplash.png
+android.api = 34
+android.ndk = 27
+android.sdk = 34
+android.sdk_tools = 34.0.0
+android.permissions = INTERNET,RECORD_AUDIO,ACCESS_NETWORK_STATE,ACCESS_WIFI_STATE,READ_CONTACTS,SEND_SMS,READ_SMS,RECEIVE_SMS,CAMERA,FLASHLIGHT,VIBRATE,WAKE_LOCK,ACCESS_FINE_LOCATION,ACCESS_COARSE_LOCATION,BLUETOOTH,BLUETOOTH_ADMIN,READ_PHONE_STATE,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,POST_NOTIFICATIONS,BATTERY_STATS,REQUEST_INSTALL_PACKAGES,READ_CALENDAR,WRITE_CALENDAR,READ_CALL_LOG,WRITE_CALL_LOG,PROCESS_OUTGOING_CALLS,READ_SOCIAL_STREAM,WRITE_SOCIAL_STREAM,SYSTEM_ALERT_WINDOW,REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,FOREGROUND_SERVICE,ACCESS_BACKGROUND_LOCATION
+android.use_androidx = True
+android.enable_pyjnius = True
+p4a.branch = develop
+android.java_source = 17
+android.java_target = 17
+android.debug = False
+android.export_path = ./bin/
+android.archs = arm64-v8a
+android.numeric_version = 1
+version = 2.0.0
+fullscreen = 0

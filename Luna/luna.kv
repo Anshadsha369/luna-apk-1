@@ -1,0 +1,105 @@
+#:kivy 2.0.0
+
+<LunaUI>:
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 0.08, 0.08, 0.15, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    ActionBar:
+        size_hint_y: 0.07
+        canvas.before:
+            Color:
+                rgba: 0.06, 0.06, 0.12, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        ActionView:
+            ActionPrevious:
+                title: 'L U N A'
+                with_previous: False
+                markup: True
+                color: 0.4, 0.75, 1, 1
+            ActionOverflow:
+            ActionButton:
+                text: 'Clear'
+                on_release: app.clear_chat()
+            ActionButton:
+                text: 'Status'
+                on_release: app.show_status()
+            ActionButton:
+                text: 'Help'
+                on_release: app.show_help()
+
+    ScrollView:
+        id: chat_scroll
+        size_hint_y: 0.78
+        do_scroll_y: True
+        bar_width: 3
+        bar_color: 0.4, 0.4, 0.6, 0.5
+        BoxLayout:
+            id: chat_container
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            padding: [10, 5]
+            spacing: 6
+
+    BoxLayout:
+        size_hint_y: 0.08
+        padding: [6, 3]
+        spacing: 5
+        canvas.before:
+            Color:
+                rgba: 0.06, 0.06, 0.12, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        TextInput:
+            id: msg_input
+            size_hint_x: 0.72
+            hint_text: 'Ask me anything...'
+            hint_text_color: 0.4, 0.4, 0.6, 1
+            foreground_color: 0.85, 0.85, 0.95, 1
+            background_normal: ''
+            background_active: ''
+            background_color: 0.1, 0.1, 0.2, 1
+            cursor_color: 0.4, 0.75, 1, 1
+            padding: [10, 8]
+            font_size: 15
+            multiline: False
+            on_text_validate: app.send(self.text)
+
+        Button:
+            id: voice_btn
+            text: '🎤'
+            size_hint_x: 0.13
+            font_size: 22
+            background_normal: ''
+            background_color: 0.4, 0.75, 1, 0.8
+            on_press: app.toggle_voice()
+
+        Button:
+            text: 'Send'
+            size_hint_x: 0.15
+            background_normal: ''
+            background_color: 0.15, 0.3, 0.5, 1
+            on_press: app.send(msg_input.text)
+
+    BoxLayout:
+        size_hint_y: 0.02
+        canvas.before:
+            Color:
+                rgba: 0.04, 0.04, 0.1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            id: status_bar
+            text: 'Luna v2.0 | Ollama: checking...'
+            font_size: 9
+            color: 0.4, 0.4, 0.6, 1
